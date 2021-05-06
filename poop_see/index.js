@@ -17,7 +17,6 @@ var dummy_commit = "[\"{\\\"user_id\\\":\\\"akaishuichi\\\",\\\"time\\\":\\\"199
 GLOBAL_full_url = "";
 
 function usr_inp_comment_fcn(e) {
-    e.target
     if (SET_ajex_full_json) {
         $.post(GLOBAL_full_url + DEF_comment_path, {
             comment: dummy_commit
@@ -25,7 +24,7 @@ function usr_inp_comment_fcn(e) {
             if (DEF_DEBUG) {
                 console.log(String(objects_returned_by_the_server));
             }
-            e.target.value = "";
+            document.getElementById(String(e.target.id).replace(/_btn/g, '') + "_input_txt").value = "";
         })
     } else {
 
@@ -37,14 +36,14 @@ function usr_inp_comment_fcn(e) {
             if (DEF_DEBUG) {
                 console.log(String(objects_returned_by_the_server));
             }
-            e.target.value = "";
+            document.getElementById(String(e.target.id).replace(/_btn/g, '') + "_input_txt").value = "";
         })
     }
 }
 
 function get3post() {
     if (DEF_DEBUG) {
-        console.log("add3post !");
+        console.log("get3post !");
     }
 
     $.get(GLOBAL_full_url, {
