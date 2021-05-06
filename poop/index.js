@@ -65,15 +65,19 @@ function usr_inp_post_fcn() {
             }, (objects_returned_by_the_server) => {
                 if (DEF_DEBUG) {
                     console.log(str(objects_returned_by_the_server));
-                    usr_inp_post_success(objects_returned_by_the_server);
                 }
+                usr_inp_post_success(objects_returned_by_the_server);
             })
         }
     }
 
 }
 
-init();
-
-//events
-document.getElementById("usr_inp_post_btn").addEventListener("click", usr_inp_post_fcn);
+jQuery(function dom_ready(dom_ready_params) {
+    
+    init();
+    
+    //events
+    document.getElementById("usr_inp_post_btn").addEventListener("click", usr_inp_post_fcn);
+    
+});
