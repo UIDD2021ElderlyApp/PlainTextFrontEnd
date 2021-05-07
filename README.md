@@ -13,3 +13,8 @@ http://luffy.ee.ncku.edu.tw/~andythebreaker/PlainTextFrontEnd/poo_see/
 https://hackmd.io/@andythebreaker/rki2NhbdO
 
 大部分的api都有比例不同的誤會，無法順利接通
+
+## 測試
+
+因SSL憑證，chrome 要 Allow CORS https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf
+go to chrome chrome://settings/content/siteDetails?site=https%3A%2F%2Fluffy.ee.ncku.edu.tw -> 「不安全的內容」允許
