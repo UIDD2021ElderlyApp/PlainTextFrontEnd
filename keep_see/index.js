@@ -11,7 +11,15 @@ var AMENDuser_idTOuser_name = false;//need false
 
 GLOBAL_full_url = "";
 
-function del_keep_fcn(e) {
+function del_keep_fcn(e) {//Postal doubts
+
+    /*$.ajax({
+        url: GLOBAL_full_url,
+        type: 'DELETE',
+        success: function(result) {
+            // Do something with the result
+        }
+    });*/
 
     $.post(GLOBAL_full_url + DEF_comment_path, {
         id: String(e.target.id).replace(/_btn/g, ''),
