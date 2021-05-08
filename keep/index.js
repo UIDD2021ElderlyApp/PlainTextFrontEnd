@@ -48,7 +48,7 @@ function usr_inp_post_fcn() {
     $.post(GLOBAL_full_url, {
         time: Date(),
         title: document.getElementById("usr_inp_title").value,
-        txt: document.getElementById("usr_inp_txt").innerText
+        text: document.getElementById("usr_inp_txt").innerText
     }, (objects_returned_by_the_server) => {
         if (DEF_DEBUG) {
             console.log(String(objects_returned_by_the_server));
