@@ -5,11 +5,26 @@ var DEF_use_https = false;
 var DEF_domain_name = "luffy.ee.ncku.edu.tw";
 var DEF_port = "52699";
 var DEF_path = "/app/reward";
+var DEF_mission_path = "/app/mission";
 
 var DEF_LOGIC_OF_FEED_food = 1;
 var DEF_LOGIC_OF_FEED_dessert = 1;
 
 GLOBAL_full_url = "";
+
+function update_mission(){
+    var tmpRegExp = new RegExp(DEF_path,'g');
+    $.get(GLOBAL_full_url.replace(tmpRegExp, DEF_mission_path), {
+        //empty
+    }, (objects_returned_by_the_server) => {
+        if (DEF_DEBUG) {
+            console.log(str(objects_returned_by_the_server));
+        }
+        document.getElementById("mission_food").innerText = JSON.stringify(parseInt(JSON.parse(objects_returned_by_the_server).eat_mission,10).toString(2));
+        document.getElementById("mission_dessert").innerText = JSON.stringify(JSON.parse(objects_returned_by_the_server).dessert_mission);
+    })
+    //(yourNumber).toString(2)
+}
 
 function refresh_basic_num() {
     $.get(GLOBAL_full_url, {
@@ -49,6 +64,7 @@ function init() {
         console.log(GLOBAL_full_url);
     }
     refresh_basic_num();
+    update_mission();
 }
 
 function usr_inp_post_fcn() {
