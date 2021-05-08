@@ -3,9 +3,9 @@ var DEF_NO_HTML_DISP = false;
 var DEF_field_battle = true;
 var DEF_use_https = false;
 var DEF_domain_name = "luffy.ee.ncku.edu.tw";
-var DEF_port = "52699";
+var DEF_port = "30087";
 var DEF_path = "/app/poop";
-var SET_ajex_full_json = true;//need false when pub.!
+var SET_ajex_full_json = false;//need false when pub.!
 
 GLOBAL_full_url = "";
 
@@ -38,7 +38,7 @@ function usr_inp_post_success(objects_returned_by_the_server) {
     if (DEF_DEBUG) {
         console.log((JSON.parse(objects_returned_by_the_server).hasOwnProperty("id")) ? "yes" : "no");
     }
-    document.getElementById("usr_inp_send_success").innerText=(JSON.parse(objects_returned_by_the_server).hasOwnProperty("id")) ? "post_success?yes":"post_success?no";
+    document.getElementById("usr_inp_send_success").innerText = (JSON.parse(objects_returned_by_the_server).hasOwnProperty("id")) ? "post_success?yes" : "post_success?no";
 }
 
 function usr_inp_post_fcn() {
@@ -56,28 +56,34 @@ function usr_inp_post_fcn() {
             }
         })
     } else {
-        {
-            $.post(GLOBAL_full_url, {
-                time: Date(),
-                title: document.getElementById("usr_inp_title").value,
-                txt: document.getElementById("usr_inp_txt").innerText,
-                img: document.getElementById("usr_inp_img_num").innerText,
-            }, (objects_returned_by_the_server) => {
-                if (DEF_DEBUG) {
-                    console.log(str(objects_returned_by_the_server));
-                }
-                usr_inp_post_success(objects_returned_by_the_server);
-            })
+        if (DEF_DEBUG) {
+            console.log(Date());
+            console.log(document.getElementById("usr_inp_title").value);
+            console.log(document.getElementById("usr_inp_txt").value);
+            console.log(document.getElementById("usr_inp_img_num").innerText);
         }
+
+        $.post(GLOBAL_full_url, {
+            time: Date(),
+            title: document.getElementById("usr_inp_title").value,
+            text: document.getElementById("usr_inp_txt").value,
+            imgid: document.getElementById("usr_inp_img_num").innerText,
+        }, (objects_returned_by_the_server) => {
+            if (DEF_DEBUG) {
+                console.log(String(objects_returned_by_the_server));
+            }
+            usr_inp_post_success(objects_returned_by_the_server);
+        })
+
     }
 
 }
 
 jQuery(function dom_ready(dom_ready_params) {
-    
+
     init();
-    
+
     //events
     document.getElementById("usr_inp_post_btn").addEventListener("click", usr_inp_post_fcn);
-    
+
 });
