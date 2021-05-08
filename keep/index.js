@@ -3,7 +3,7 @@ var DEF_NO_HTML_DISP = false;
 var DEF_field_battle = true;
 var DEF_use_https = false;
 var DEF_domain_name = "luffy.ee.ncku.edu.tw";
-var DEF_port = "52699";
+var DEF_port = "30087";
 var DEF_path = "/app/keep";
 
 GLOBAL_full_url = "";
