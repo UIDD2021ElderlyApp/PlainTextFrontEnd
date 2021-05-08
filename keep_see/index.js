@@ -120,7 +120,7 @@ function init() {
         document.getElementById("dont_show_this_in_published_client").style.display = "none";
     }
     if (DEF_field_battle) {
-        document.getElementById("main_keep_see").style.height = "200px";
+        document.getElementById("main_keep_see").style.height = "400px";
     }
     GLOBAL_full_url = ((DEF_use_https) ? "https" : "http") + "://" + DEF_domain_name + ":" + DEF_port + DEF_path;
     if (DEF_DEBUG) {
