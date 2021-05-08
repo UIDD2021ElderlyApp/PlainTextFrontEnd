@@ -68,13 +68,6 @@ function get3keep() {
                 ppt_frame.classList.add("ppt_frame");
                 var ph_item = document.createElement("div");
                 ph_item.classList.add("ph_item");
-                var pn_item = document.createElement("div");
-                pn_item.classList.add("pn_item");
-                if (AMENDuser_idTOuser_name) {
-                    pn_item.innerText = element_returned_by_the_server.user_id;
-                } else {
-                    pn_item.innerText = element_returned_by_the_server.user_name;
-                }
                 var pd_item = document.createElement("div");
                 pd_item.classList.add("pd_item");
                 //convert given date into readable format
@@ -89,7 +82,6 @@ function get3keep() {
                 ppt_frame.appendChild(pt_item);
                 ppt_frame.appendChild(pi_item);
                 pi_frame.appendChild(ph_item);
-                pi_frame.appendChild(pn_item);
                 pi_frame.appendChild(pd_item);
                 p_frame.appendChild(pi_frame);
                 p_frame.appendChild(ppt_frame);
@@ -128,7 +120,7 @@ function init() {
         document.getElementById("dont_show_this_in_published_client").style.display = "none";
     }
     if (DEF_field_battle) {
-        document.getElementById("main_keep_see").style.height = "400px";
+        document.getElementById("main_keep_see").style.height = "200px";
     }
     GLOBAL_full_url = ((DEF_use_https) ? "https" : "http") + "://" + DEF_domain_name + ":" + DEF_port + DEF_path;
     if (DEF_DEBUG) {

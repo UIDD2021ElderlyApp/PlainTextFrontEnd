@@ -43,12 +43,15 @@ function usr_inp_post_success(objects_returned_by_the_server) {
 function usr_inp_post_fcn() {
     if (DEF_DEBUG) {
         console.log("usr_inp_post_btn click");
+        console.log( Date());
+        console.log(document.getElementById("usr_inp_title").value);
+        console.log(document.getElementById("usr_inp_txt").value);
     }
 
     $.post(GLOBAL_full_url, {
         time: Date(),
         title: document.getElementById("usr_inp_title").value,
-        text: document.getElementById("usr_inp_txt").innerText
+        text: document.getElementById("usr_inp_txt").value
     }, (objects_returned_by_the_server) => {
         if (DEF_DEBUG) {
             console.log(String(objects_returned_by_the_server));
