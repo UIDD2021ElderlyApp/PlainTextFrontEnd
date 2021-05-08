@@ -5,6 +5,7 @@ var DEF_use_https = false;
 var DEF_domain_name = "luffy.ee.ncku.edu.tw";
 var DEF_port = "30087";
 var DEF_path = "/app/keep";
+var DEF_del_path="/del";
 
 var DEF_TEXT_UI_del_btn = "刪除";
 var AMENDuser_idTOuser_name = false;//need false
@@ -21,7 +22,7 @@ function del_keep_fcn(e) {//Postal doubts
         }
     });*/
 
-    $.post(GLOBAL_full_url + DEF_comment_path, {
+    $.post(GLOBAL_full_url + DEF_del_path, {
         id: String(e.target.id).replace(/_btn/g, ''),
     }, (objects_returned_by_the_server) => {
         if (DEF_DEBUG) {

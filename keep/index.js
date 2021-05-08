@@ -51,7 +51,7 @@ function usr_inp_post_fcn() {
         txt: document.getElementById("usr_inp_txt").innerText
     }, (objects_returned_by_the_server) => {
         if (DEF_DEBUG) {
-            console.log(str(objects_returned_by_the_server));
+            console.log(String(objects_returned_by_the_server));
         }
         usr_inp_post_success(objects_returned_by_the_server);
     })
