@@ -6,7 +6,7 @@
 http://luffy.ee.ncku.edu.tw/~andythebreaker/PlainTextFrontEnd/keep_see/
 http://luffy.ee.ncku.edu.tw/~andythebreaker/PlainTextFrontEnd/keep/
 http://luffy.ee.ncku.edu.tw/~andythebreaker/PlainTextFrontEnd/poop/
-http://luffy.ee.ncku.edu.tw/~andythebreaker/PlainTextFrontEnd/poo_see/
+http://luffy.ee.ncku.edu.tw/~andythebreaker/PlainTextFrontEnd/poop_see/
 
 ## 後端建議修正的項目
 
