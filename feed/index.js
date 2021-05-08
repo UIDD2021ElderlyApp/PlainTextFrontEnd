@@ -12,7 +12,7 @@ var DEF_LOGIC_OF_FEED_dessert = 1;
 
 GLOBAL_full_url = "";
 
-function update_mission(){
+/*function update_mission(){
     var tmpRegExp = new RegExp(DEF_path,'g');
     $.get(GLOBAL_full_url.replace(tmpRegExp, DEF_mission_path), {
         //empty
@@ -24,7 +24,7 @@ function update_mission(){
         document.getElementById("mission_dessert").innerText = JSON.stringify(JSON.parse(objects_returned_by_the_server).dessert_mission);
     })
     //(yourNumber).toString(2)
-}
+}*/
 
 function refresh_basic_num() {
     $.get(GLOBAL_full_url, {
@@ -64,7 +64,7 @@ function init() {
         console.log(GLOBAL_full_url);
     }
     refresh_basic_num();
-    update_mission();
+    //update_mission();
 }
 
 function usr_inp_post_fcn() {
