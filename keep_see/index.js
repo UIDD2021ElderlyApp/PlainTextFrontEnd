@@ -6,7 +6,7 @@ var DEF_domain_name = "luffy.ee.ncku.edu.tw";
 var DEF_port = "30087";
 var DEF_path = "/app/keep";
 
-var DEF_TEXT_UI_comment_btn = "刪除";
+var DEF_TEXT_UI_del_btn = "刪除";
 var AMENDuser_idTOuser_name = false;//need false
 
 GLOBAL_full_url = "";
