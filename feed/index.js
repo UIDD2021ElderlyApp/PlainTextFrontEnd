@@ -1,9 +1,9 @@
 var DEF_DEBUG = true;
 var DEF_NO_HTML_DISP = false;
 var DEF_field_battle = true;
-var DEF_use_https = false;
+var DEF_use_https = true;
 var DEF_domain_name = "luffy.ee.ncku.edu.tw";
-var DEF_port = "30087";
+var DEF_port = "38443";
 var DEF_path = "/app/reward";
 //var DEF_mission_path = "/app/mission";
 
