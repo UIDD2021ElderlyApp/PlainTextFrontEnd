@@ -3,9 +3,9 @@ var DEF_NO_HTML_DISP = false;
 var DEF_field_battle = true;
 var DEF_use_https = false;
 var DEF_domain_name = "luffy.ee.ncku.edu.tw";
-var DEF_port = "52699";
+var DEF_port = "30087";
 var DEF_path = "/app/reward";
-var DEF_mission_path = "/app/mission";
+//var DEF_mission_path = "/app/mission";
 
 var DEF_LOGIC_OF_FEED_food = 1;
 var DEF_LOGIC_OF_FEED_dessert = 1;
@@ -31,7 +31,7 @@ function refresh_basic_num() {
         //empty
     }, (objects_returned_by_the_server) => {
         if (DEF_DEBUG) {
-            console.log(str(objects_returned_by_the_server));
+            console.log(String(objects_returned_by_the_server));
         }
         document.getElementById("show_exp_num").innerText = JSON.parse(objects_returned_by_the_server).exp;
         document.getElementById("show_food_num").innerText = JSON.parse(objects_returned_by_the_server).food;
@@ -78,7 +78,7 @@ function usr_inp_post_fcn() {
         txt: document.getElementById("usr_inp_txt").innerText
     }, (objects_returned_by_the_server) => {
         if (DEF_DEBUG) {
-            console.log(str(objects_returned_by_the_server));
+            console.log(String(objects_returned_by_the_server));
         }
         usr_inp_post_success(objects_returned_by_the_server);
     })
@@ -92,7 +92,7 @@ function usr_inp_food_fcn(e) {
         dessert: document.getElementById("show_dessert_num").innerText
     }, (objects_returned_by_the_server) => {
         if (DEF_DEBUG) {
-            console.log(str(objects_returned_by_the_server));
+            console.log(String(objects_returned_by_the_server));
         }
         refresh_basic_num();
     })
@@ -104,7 +104,7 @@ function usr_inp_dessert_fcn(e) {
         dessert: parseInt(document.getElementById("show_dessert_num").innerText, 10) + 1
     }, (objects_returned_by_the_server) => {
         if (DEF_DEBUG) {
-            console.log(str(objects_returned_by_the_server));
+            console.log(String(objects_returned_by_the_server));
         }
         refresh_basic_num();
     })
@@ -116,7 +116,7 @@ function updownleftleftrightright_exp_plus_fcn(e) {
         dessert: document.getElementById("show_dessert_num").innerText
     }, (objects_returned_by_the_server) => {
         if (DEF_DEBUG) {
-            console.log(str(objects_returned_by_the_server));
+            console.log(String(objects_returned_by_the_server));
         }
         refresh_basic_num();
     })
@@ -128,7 +128,7 @@ function updownleftleftrightright_exp_minus_fcn(e) {
         dessert: document.getElementById("show_dessert_num").innerText
     }, (objects_returned_by_the_server) => {
         if (DEF_DEBUG) {
-            console.log(str(objects_returned_by_the_server));
+            console.log(String(objects_returned_by_the_server));
         }
         refresh_basic_num();
     })
@@ -140,7 +140,7 @@ function updownleftleftrightright_food_plus_fcn(e) {
         dessert: document.getElementById("show_dessert_num").innerText
     }, (objects_returned_by_the_server) => {
         if (DEF_DEBUG) {
-            console.log(str(objects_returned_by_the_server));
+            console.log(String(objects_returned_by_the_server));
         }
         refresh_basic_num();
     })
@@ -152,7 +152,7 @@ function updownleftleftrightright_food_minus_fcn(e) {
         dessert: document.getElementById("show_dessert_num").innerText
     }, (objects_returned_by_the_server) => {
         if (DEF_DEBUG) {
-            console.log(str(objects_returned_by_the_server));
+            console.log(String(objects_returned_by_the_server));
         }
         refresh_basic_num();
     })
@@ -164,7 +164,7 @@ function updownleftleftrightright_dessert_plus_fcn(e) {
         dessert: parseInt(document.getElementById("show_dessert_num").innerText, 10) + 1
     }, (objects_returned_by_the_server) => {
         if (DEF_DEBUG) {
-            console.log(str(objects_returned_by_the_server));
+            console.log(String(objects_returned_by_the_server));
         }
         refresh_basic_num();
     })
@@ -176,7 +176,7 @@ function updownleftleftrightright_dessert_minus_fcn(e) {
         dessert: parseInt(document.getElementById("show_dessert_num").innerText, 10) - 1
     }, (objects_returned_by_the_server) => {
         if (DEF_DEBUG) {
-            console.log(str(objects_returned_by_the_server));
+            console.log(String(objects_returned_by_the_server));
         }
         refresh_basic_num();
     })
