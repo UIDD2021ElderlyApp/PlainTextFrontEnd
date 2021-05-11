@@ -2,6 +2,7 @@ var DEF_DEBUG = true;
 var DEF_NO_HTML_DISP = false;
 var DEF_field_battle = true;
 var DEF_use_https = false;
+var DEF_ts = true;//be true
 var DEF_domain_name = "luffy.ee.ncku.edu.tw";
 var DEF_port = "30087";
 var DEF_path = "/app/poop";
@@ -58,7 +59,7 @@ function get3post() {
         }
         if (!objects_returned_by_the_server) {
             // is emtpy
-            document.getElementById(main_poop_see).classList.add("no_articles_here_or_stolen_by_aliens");
+            document.getElementById(browse_post).classList.add("no_articles_here_or_stolen_by_aliens");
             if (document.getElementById("STAT_no_articles_here_or_stolen_by_aliens").innerText === "no_articles_here_or_stolen_by_aliens?undefine") {
                 document.getElementById("STAT_no_articles_here_or_stolen_by_aliens").innerText = "no_articles_here_or_stolen_by_aliens?yes";
             } else {
@@ -70,8 +71,8 @@ function get3post() {
                 const element_returned_by_the_server = JSON.parse(objects_returned_by_the_server)[forloopindexofOBJRETURNBYSV];
 
                 if (DEF_DEBUG) { console.log(element_returned_by_the_server); }
-                var all_frame = document.createElement("div");
-                all_frame.classList.add("all_frame");
+                var post_poop = document.createElement("div");
+                post_poop.classList.add("post_poop");
                 var p_frame = document.createElement("div");
                 p_frame.classList.add("p_frame");
                 var ca_frame = document.createElement("div");
@@ -80,25 +81,25 @@ function get3post() {
                 pi_frame.classList.add("pi_frame");
                 var ppt_frame = document.createElement("div");
                 ppt_frame.classList.add("ppt_frame");
-                var ph_item = document.createElement("div");
-                ph_item.classList.add("ph_item");
-                var pn_item = document.createElement("div");
-                pn_item.classList.add("pn_item");
+                var poster_photo = document.createElement("div");
+                poster_photo.classList.add("poster_photo");
+                var poster_name = document.createElement("div");
+                poster_name.classList.add("poster_name");
                 if (AMENDuser_idTOuser_name) {
-                    pn_item.innerText = element_returned_by_the_server.user_id;
+                    poster_name.innerText = element_returned_by_the_server.user_id;
                 } else {
-                    pn_item.innerText = element_returned_by_the_server.user_name;
+                    poster_name.innerText = element_returned_by_the_server.user_name;
                 }
-                var pd_item = document.createElement("div");
-                pd_item.classList.add("pd_item");
+                var post_time = document.createElement("div");
+                post_time.classList.add("post_time");
                 //convert given date into readable format
                 var tmp_date = new Date(element_returned_by_the_server.time);
-                pd_item.innerText = tmp_date.toDateString();
-                var pt_item = document.createElement("div");
-                pt_item.classList.add("pt_item");
-                pt_item.innerText = element_returned_by_the_server.text;
-                var pi_item = document.createElement("div");
-                pi_item.classList.add("pi_item");
+                post_time.innerText = tmp_date.toDateString();
+                var post_text = document.createElement("div");
+                post_text.classList.add("post_text");
+                post_text.innerText = element_returned_by_the_server.text;
+                var post_photo = document.createElement("div");
+                post_photo.classList.add("post_photo");
 
                 for (let forloopcommentindex = 0; forloopcommentindex < element_returned_by_the_server.comment.length; forloopcommentindex++) {
                     const comment_element = JSON.parse(element_returned_by_the_server.comment[forloopcommentindex]);
@@ -136,35 +137,35 @@ function get3post() {
                     ca_frame.appendChild(c_frame);
                 }
 
-                ppt_frame.appendChild(pt_item);
-                ppt_frame.appendChild(pi_item);
-                pi_frame.appendChild(ph_item);
-                pi_frame.appendChild(pn_item);
-                pi_frame.appendChild(pd_item);
+                ppt_frame.appendChild(post_text);
+                ppt_frame.appendChild(post_photo);
+                pi_frame.appendChild(poster_photo);
+                pi_frame.appendChild(poster_name);
+                pi_frame.appendChild(post_time);
                 p_frame.appendChild(pi_frame);
                 p_frame.appendChild(ppt_frame);
-                all_frame.appendChild(p_frame);
+                post_poop.appendChild(p_frame);
                 //--------------------bton
-                var add_comment_frame = document.createElement("div");
-                add_comment_frame.classList.add("add_comment_frame");
+                var new_comment = document.createElement("div");
+                new_comment.classList.add("new_comment");
                 var usr_inp_comment_txt = document.createElement("input");
                 usr_inp_comment_txt.classList.add("usr_inp_comment_txt");
                 usr_inp_comment_txt.name = "usr_inp_comment_txt_name";
                 usr_inp_comment_txt.type = "text";
                 usr_inp_comment_txt.id = String(element_returned_by_the_server.id) + "_input_txt";
-                var usr_inp_comment_btn = document.createElement("div");
-                usr_inp_comment_btn.classList.add("usr_inp_comment_btn");
-                usr_inp_comment_btn.innerText = DEF_TEXT_UI_comment_btn;
-                usr_inp_comment_btn.id = String(element_returned_by_the_server.id) + "_btn";
+                var post_comment_button = document.createElement("div");
+                post_comment_button.classList.add("post_comment_button");
+                post_comment_button.innerText = DEF_TEXT_UI_comment_btn;
+                post_comment_button.id = String(element_returned_by_the_server.id) + "_btn";
 
-                add_comment_frame.appendChild(usr_inp_comment_txt);
-                add_comment_frame.appendChild(usr_inp_comment_btn);
-                all_frame.appendChild(add_comment_frame);
+                new_comment.appendChild(usr_inp_comment_txt);
+                new_comment.appendChild(post_comment_button);
+                post_poop.appendChild(new_comment);
                 //--------------------
-                all_frame.appendChild(ca_frame);
-                document.getElementById("main_poop_see").appendChild(all_frame);
+                post_poop.appendChild(ca_frame);
+                document.getElementById("browse_post").appendChild(post_poop);
 
-                document.getElementById(usr_inp_comment_btn.id).addEventListener("click", usr_inp_comment_fcn);
+                document.getElementById(post_comment_button.id).addEventListener("click", usr_inp_comment_fcn);
             }
         }
     })
@@ -185,16 +186,19 @@ function init() {
         document.getElementById("dont_show_this_in_published_client").style.display = "none";
     }
     if (DEF_field_battle) {
-        document.getElementById("main_poop_see").style.height = "400px";
+        document.getElementById("browse_post").style.height = "400px";
     }
     GLOBAL_full_url = ((DEF_use_https) ? "https" : "http") + "://" + DEF_domain_name + ":" + DEF_port + DEF_path;
     if (DEF_DEBUG) {
         console.log(GLOBAL_full_url);
     }
+    if(DEF_ts){
+        document.getElementById(browse_post).innerHTML="";
+    }
     get3post();
 
     if (SET_FillTest) {
-        document.getElementById("main_poop_see").innerText="1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n"
+        document.getElementById("browse_post").innerText="1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n"
     }
 }
 
@@ -205,7 +209,7 @@ function scrolledToBottom(e) {
     get3post();
 }
 
-function main_poop_see_scroll(e) {
+function browse_post_scroll(e) {
     if (e.target.offsetHeight + e.target.scrollTop >= e.target.scrollHeight) {
         scrolledToBottom(e);
     }
@@ -215,5 +219,5 @@ jQuery(function dom_ready(dom_ready_params) {
 
     init();
 
-    document.getElementById("main_poop_see").addEventListener("scroll", main_poop_see_scroll);
+    document.getElementById("browse_post").addEventListener("scroll", browse_post_scroll);
 });
