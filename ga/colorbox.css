@@ -157,9 +157,9 @@
     top: 50%;
     left: 5px;
     margin-top: -32px;
-    background: url(images/controls2.svg) no-repeat top left;
-    width: calc(5*28px);
-    height: calc(5*65px);
+    background: url(images/controls4.svg) no-repeat top left;
+    width: calc(3*28px);
+    height: calc(3*65px);
     text-indent: -9999px;
 }
 
@@ -172,9 +172,9 @@
     top: 50%;
     right: 5px;
     margin-top: -32px;
-    background: url(images/controls2.svg) no-repeat top right;
-    width: calc(5*28px);
-    height: calc(5*65px);
+    background: url(images/controls4.svg) no-repeat top right;
+    width: calc(3*28px);
+    height: calc(3*65px);
     text-indent: -9999px;
 }
 
@@ -187,15 +187,33 @@
     top: 5px;
     right: 5px;
     display: block;
-    background: url(images/controls2.svg) no-repeat top center;
+    /*background: url(images/controls3.svg) no-repeat top center;*/
     /*background-size: calc(100%*(490/980)) calc(100%*(650/1742));*/
     /*width: calc(5*38px);
     height: calc(19px*5);*/
-    background-size: 490px 650px;
+    /*background-size: calc(100vw*(490/980)) calc(100vh*(650/1742));*/
     width: calc(100vw*5*38/980);
     height: calc(100vh*5*19/1742);
     text-indent: -9999px;
     /*transform: scale(5);*/
+
+
+
+    font-size: 3vh;
+    font-weight: bold;
+    background-color: #f7E354;
+    border-radius: 2vh;
+    border: 0vh;
+    box-shadow: #3f3f3f 0.4vh 0.4vh 0.5vh;
+    appearance: auto;
+    display: inline-block;
+    align-items: flex-start;
+    cursor: default;
+    z-index: 9999;
+    position: absolute;
+    top: 1vh;
+    left: 1vw;
+    text-align: center;
 }
 
 #cboxClose:hover {

@@ -1,5 +1,9 @@
 console.log("windos-height:"+$(window).height());console.log("windos-width:"+$(window).width());
 
+document.body.addEventListener("change", function(){
+    console.log("dom change!");
+});
+
 function checkFlag() {
     if (!document.getElementById("cboxLoadingGraphic")) {
         setTimeout(() => {
