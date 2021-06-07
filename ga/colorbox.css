@@ -7,7 +7,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    z-index: 9999;
+    z-index: 9997;
     overflow: hidden;
     -webkit-transform: translate3d(0, 0, 0);
 }
@@ -47,7 +47,7 @@
     height: 100%;
 }
 
-#cboxPrevious, #cboxNext, #cboxClose, #cboxSlideshow {
+#cboxPrevious, #cboxNext, #cboxClose, #cboxConfirm_picture, #cboxSlideshow {
     cursor: pointer;
 }
 
@@ -130,7 +130,7 @@
 
 /* these elements are buttons, and may need to have additional styles reset to avoid unwanted base styles */
 
-#cboxPrevious, #cboxNext, #cboxSlideshow, #cboxClose {
+#cboxPrevious, #cboxNext, #cboxSlideshow, #cboxClose, #cboxConfirm_picture {
     border: 0;
     padding: 0;
     margin: 0;
@@ -141,7 +141,7 @@
 
 /* avoid outlines on :active (mouseclick), but preserve outlines on :focus (tabbed navigating) */
 
-#cboxPrevious:active, #cboxNext:active, #cboxSlideshow:active, #cboxClose:active {
+#cboxPrevious:active, #cboxNext:active, #cboxSlideshow:active, #cboxClose:active, #cboxConfirm_picture:active {
     outline: 0;
 }
 
@@ -157,10 +157,12 @@
     top: 50%;
     left: 5px;
     margin-top: -32px;
-    background: url(images/controls4.svg) no-repeat top left;
+    /*background: url(images/controls4.svg) no-repeat top left;*/
+    background: transparent no-repeat top left;
     width: calc(3*28px);
     height: calc(3*65px);
     text-indent: -9999px;
+    /*display: none;*/
 }
 
 #cboxPrevious:hover {
@@ -172,10 +174,12 @@
     top: 50%;
     right: 5px;
     margin-top: -32px;
-    background: url(images/controls4.svg) no-repeat top right;
+    /*background: url(images/controls4.svg) no-repeat top right;*/
+    background: transparent no-repeat top right;
     width: calc(3*28px);
     height: calc(3*65px);
     text-indent: -9999px;
+    /*display:none;*/
 }
 
 #cboxNext:hover {
@@ -187,18 +191,8 @@
     top: 5px;
     right: 5px;
     display: block;
-    /*background: url(images/controls3.svg) no-repeat top center;*/
-    /*background-size: calc(100%*(490/980)) calc(100%*(650/1742));*/
-    /*width: calc(5*38px);
-    height: calc(19px*5);*/
-    /*background-size: calc(100vw*(490/980)) calc(100vh*(650/1742));*/
     width: calc(100vw*5*38/980);
     height: calc(100vh*5*19/1742);
-    text-indent: -9999px;
-    /*transform: scale(5);*/
-
-
-
     font-size: 3vh;
     font-weight: bold;
     background-color: #f7E354;
@@ -210,12 +204,42 @@
     align-items: flex-start;
     cursor: default;
     z-index: 9999;
-    position: absolute;
-    top: 1vh;
-    left: 1vw;
     text-align: center;
+    color: #000;
+    /*border-color: transparent;*/
+    margin-right: 1vh;
+    margin-top: 1vh;
 }
 
-#cboxClose:hover {
+/*#cboxClose:hover {
     background-position: bottom center;
+}*/
+
+/*.custom_buttons_modified_from_the_mod {
+
+}*/
+
+#cboxConfirm_picture {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    display: block;
+    width: calc(100vw*5*38/980);
+    height: calc(100vh*5*19/1742);
+    font-size: 3vh;
+    font-weight: bold;
+    background-color: #f7E354;
+    border-radius: 2vh;
+    border: 0vh;
+    box-shadow: #3f3f3f 0.4vh 0.4vh 0.5vh;
+    appearance: auto;
+    display: inline-block;
+    align-items: flex-start;
+    cursor: default;
+    z-index: 9998;
+    text-align: center;
+    color: #000;
+    /*border-color: transparent;*/
+    margin-left: 1vh;
+    margin-top: 1vh;
 }

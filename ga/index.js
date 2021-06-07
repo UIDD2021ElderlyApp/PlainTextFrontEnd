@@ -1,6 +1,6 @@
-console.log("windos-height:"+$(window).height());console.log("windos-width:"+$(window).width());
+console.log("windos-height:" + $(window).height()); console.log("windos-width:" + $(window).width());
 
-document.body.addEventListener("change", function(){
+document.body.addEventListener("change", function () {
     console.log("dom change!");
 });
 
@@ -38,4 +38,12 @@ $(".button").bind('touchstart', function () {
 })
 $(".button").bind('touchend', function () {
     $(this).animate({ 'opacity': 1 }, 100)
+})
+$(window).scroll(function () {
+    //console.log("scrolltop:" + $(this).scrollTop());
+    document.getElementById("label").style.marginTop = $(this).scrollTop().toString() + "px";
+})
+$("#confirmed_forwarding_path").on('click', function (e) {
+    e.preventDefault();
+    console.log("confirmed_forwarding_path");
 })
