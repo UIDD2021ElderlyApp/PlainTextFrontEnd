@@ -42,8 +42,19 @@ $(".button").bind('touchend', function () {
 $(window).scroll(function () {
     //console.log("scrolltop:" + $(this).scrollTop());
     document.getElementById("label").style.marginTop = $(this).scrollTop().toString() + "px";
+    document.getElementById("quit").style.marginTop = $(this).scrollTop().toString() + "px";
+
 })
 $("#confirmed_forwarding_path").on('click', function (e) {
     e.preventDefault();
     console.log("confirmed_forwarding_path");
 })
+
+$("#quit").on('click', function (e) {
+    e.preventDefault();
+    console.log("quit");
+})
+
+function page_escape(params) {
+    
+}

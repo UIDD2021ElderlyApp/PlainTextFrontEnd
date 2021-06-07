@@ -18,6 +18,26 @@
     text-align: center;
 }
 
+#quit {
+    height: 5vh;
+    width: calc(38%*(2/5));
+    font-size: 3vh;
+    font-weight: bold;
+    background-color: #f7E354;
+    border-radius: 2vh;
+    border: 0vh;
+    box-shadow: #3f3f3f 0.4vh 0.4vh 0.5vh;
+    appearance: auto;
+    display: inline-block;
+    align-items: flex-start;
+    cursor: default;
+    z-index: 9999;
+    position: absolute;
+    top: 1vh;
+    right: calc(1vw*2);
+    text-align: center;
+}
+
 .loading {
     width: 11vh;
     height: 11vh;
